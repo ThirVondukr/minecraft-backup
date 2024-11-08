@@ -3,7 +3,7 @@ version: "3"
 vars:
   RUNNER:
     sh: 'echo {{ .RUNNER | default "uv run" }}'
-  SOURCES: mc_backup
+  SOURCES: .
   SOURCES_ROOT: .
 
 tasks:

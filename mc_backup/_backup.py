@@ -2,7 +2,7 @@ import contextlib
 import shutil
 import tarfile
 from collections.abc import AsyncIterator
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
