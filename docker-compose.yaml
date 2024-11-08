@@ -1,0 +1,26 @@
+services:
+  backup:
+    build: .
+
+    env_file:
+      - .env
+    environment:
+      SERVER_PATH: /mc-server
+      BACKUP_DESTINATION: /backups
+      RCON_HOST: minecraft-server
+    volumes:
+      - ./.local/data:/mc-server
+      - ./backups:/backups
+
+  minecraft-server:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+    environment:
+      EULA: "TRUE"
+      VERSION: 1.21.1
+    volumes:
+      - ./.local/data:/data
